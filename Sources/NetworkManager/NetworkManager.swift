@@ -68,7 +68,7 @@ public class NetworkPackage: NetworkService {
                 }
             }
             
-            if httpResponse.statusCode != 200 {
+             guard (200...299).contains(httpResponse.statusCode) else {
                 completion(.failure(NSError(domain: "com.example.Test", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Request failed with status code \(httpResponse.statusCode)"])))
                 return
             }
@@ -143,7 +143,7 @@ public class NetworkPackage: NetworkService {
                 }
             }
             
-            if httpResponse.statusCode != 200 {
+             guard (200...299).contains(httpResponse.statusCode) else {
                 completion(.failure(NSError(domain: "com.example.Test", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Request failed with status code \(httpResponse.statusCode)"])))
                 return
             }
@@ -201,7 +201,7 @@ public class NetworkPackage: NetworkService {
                 }
             }
             
-            if httpResponse.statusCode != 200 {
+             guard (200...299).contains(httpResponse.statusCode) else {
                 completion(.failure(NSError(domain: "com.example.Test", code: httpResponse.statusCode, userInfo: [NSLocalizedDescriptionKey: "Request failed with status code \(httpResponse.statusCode)"])))
                 return
             }
